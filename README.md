@@ -24,6 +24,6 @@ When you enable the extension (chrome only atm), you will see the Perspective in
 ### Disagree with a feedback result?
 
 As the Perspective team puts it:
->"We created an experiment using Perspective to illustrate when comments might be perceived as “toxic" by others. Disagree with the result? Please let us know! It’s still early days and we will get a lot of things wrong."
+>"It’s still early days and we will get a lot of things wrong."
 
 So, for now you can not submit feedback from the extension. This is in the pipeline, though!
