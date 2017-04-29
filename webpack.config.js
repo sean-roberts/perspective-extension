@@ -15,8 +15,12 @@ module.exports = {
                 ignore: [
                     '**/build/**/*',
                     '**/node_modules/**/*',
+                    'package.json',
+                    'webpack.config.js',
+                    
                     // app is bundled separately
                     '**/src/app/**/*.js'
+
                 ]
             }
         ])
