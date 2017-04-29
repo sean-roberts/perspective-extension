@@ -20,10 +20,14 @@ When you enable the extension (chrome only atm), you will see the Perspective in
 - [ ] Firefox add-on
 
 
+### Feedback, comments, bugs...
+
+If you have feedback on this extension, please create an issue on this repository or in the chrome store listing. All types of feedback are welcome.
+
 
 ### Disagree with a feedback result?
 
 As the Perspective team puts it:
 >"It’s still early days and we will get a lot of things wrong."
 
-So, for now you can not submit feedback from the extension. This is in the pipeline, though!
+The API allows for feedback on scores to be submitted but this is not built into the extension. This is in the pipeline, though!
