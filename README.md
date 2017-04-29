@@ -31,3 +31,14 @@ As the Perspective team puts it:
 >"It’s still early days and we will get a lot of things wrong."
 
 The API allows for feedback on scores to be submitted but this is not built into the extension. This is in the pipeline, though!
+
+
+### Development
+
+  1. `npm install`
+
+  1. `npm run build` will create a `build/` directory
+
+  1. _(optional)_ `npm run watch` will create a `build/` directory and will rebuild when changes happen in repo
+
+The `build/` directory is what contains the manifest and built extension code for loading the unpacked extension into chrome.
