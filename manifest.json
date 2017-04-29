@@ -1,9 +1,9 @@
 {
-  "name": "Perspective Test",
-  "version": "0.0.1",
+  "name": "Perspective Extension",
+  "version": "0.1.0",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
+  "description": "See potential impact of your writing as you write.",
+  "homepage_url": "https://github.com/sean-roberts/perspective-extension",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
