@@ -1,0 +1,40 @@
+
+
+.feedback-icon {
+  display: none;
+  position: absolute;
+  z-index: 2147483647;
+  width: 15px;
+  height: 15px;
+  background-color: lightgrey;
+  background-image: linear-gradient(to right, #25C1F9 0%, #419CFB 25%, #7853FF 50%, #AA25FC 75%, #D400F9 100%);
+  background-size: 500px;
+  background-position-x: 10%;
+  transition: all 200ms ease-out;
+  border-radius: 50%;
+}
+
+.feedback-icon.square {
+  border-radius: 0;
+}
+
+.feedback-icon.diamond {
+  transform: rotate(45deg);
+  border-radius: 0;
+}
+
+.feedback-icon.loading {
+  background-image: none;
+  animation: bounce .8s;
+  animation-iteration-count: infinite;
+}
+
+.feedback-icon.error {
+  background-image: none;
+}
+
+@keyframes bounce {
+  0% { transform: scale(0.4); opacity: 1 }
+  50% { transform: scale(0.7); opacity: .7; }
+  100% { transform: scale(0.4) }
+}
