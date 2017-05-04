@@ -28,6 +28,7 @@ header {
     flex-direction: row;
     padding: 20px 15px;
     font-size: 14px;
+    align-items: center;
 }
 
 
@@ -37,4 +38,8 @@ header {
 
 .option-answer {
 
+}
+
+.domain {
+    font-weight: bold;
 }
