@@ -33,9 +33,6 @@ var background = {};
 
         isDomainBlacklisted: (domain) => {
             return _load().then((settings)=>{
-
-                console.log(settings.blacklistedDomains, domain);
-
                 return settings.blacklistedDomains.includes((domain || '').toLowerCase());
             });
         },
