@@ -1,0 +1,40 @@
+body {
+    width: 275px;
+    padding: 0;
+    margin: 0;
+    color: #323439;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    /*text-align: center;*/
+    padding: 15px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.perspective-ext-logo {
+    height: 30px;
+    margin-right: 6px
+}
+
+
+.content {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 15px;
+    font-size: 14px;
+}
+
+
+.option-question {
+
+}
+
+.option-answer {
+
+}

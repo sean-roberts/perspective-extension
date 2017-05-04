@@ -1,5 +1,5 @@
 {
-  "name": "Perspective Extension",
+  "name": "Author Perspective",
   "version": "0.1.0",
   "manifest_version": 2,
   "description": "See potential impact of your writing as you write.",
@@ -10,12 +10,19 @@
     "128": "icons/icon128.png"
   },
   "default_locale": "en",
+  "background":{
+		"scripts":[
+			"src/background/background.js"
+		]
+	},
   "browser_action": {
     "default_icon": "icons/icon19.png",
     "default_title": "Perspective",
-    "default_popup": "src/browser_action/browser_action.html"
+    "default_popup": "src/browser-action/browser-action.html"
   },
   "permissions": [
+    "tabs",
+    "storage",
     "https://perspective.now.sh"
   ],
   "content_scripts": [
