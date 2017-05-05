@@ -1,3 +1,4 @@
+const settingsWatcher = require('./settings-watcher');
 const debounce = require('debounce');
 
 // Removing 'input' for now to see if it's actually
@@ -8,6 +9,7 @@ const VALID_INPUTS = ['textarea'];
 let _textChangedListener;
 let _onBlurListener;
 let _processedText;
+
 
 const _page = {
 
@@ -20,36 +22,43 @@ const _page = {
 
         document.body.addEventListener('focus', (event)=>{
 
-            const target = event.target;
-            const isContentEditable = target.getAttribute('contenteditable') === 'true';
+            settingsWatcher.currentDomainBlacklisted().then((blacklisted)=>{
 
-            if(!VALID_INPUTS.includes(target.nodeName.toLowerCase()) && !isContentEditable){
-                return;
-            }
-
-            // process initial text on focus
-            _page.processText(isContentEditable ? target.textContent : target.value);
-
-            // using keydown + debounce timing to provide an early event capture
-            // to avoid propagation cancelling and debouncing to chunk up processing
-            const keydownListener = target.addEventListener('keydown', debounce((event)=>{
-                _page.processText(isContentEditable ? target.textContent : target.value);
-            }, 300), /*capturePhase*/ true);
-
-            
-            const blurListener = target.addEventListener('blur', ()=>{
-
-                target.removeEventListener('keydown', keydownListener);
-                target.removeEventListener('blur', blurListener);
-
-                if(_onBlurListener){
-                    _onBlurListener();
+                if(blacklisted){
+                    return;
                 }
 
-            }, /*capturePhase*/ true);
+                const target = event.target;
+                const isContentEditable = target.getAttribute('contenteditable') === 'true';
+
+                if(!VALID_INPUTS.includes(target.nodeName.toLowerCase()) && !isContentEditable){
+                    return;
+                }
+
+                // process initial text on focus
+                _page.processText(isContentEditable ? target.textContent : target.value);
+
+                // using keydown + debounce timing to provide an early event capture
+                // to avoid propagation cancelling and debouncing to chunk up processing
+                const keydownListener = target.addEventListener('keydown', debounce((event)=>{
+                    _page.processText(isContentEditable ? target.textContent : target.value);
+                }, 300), /*capturePhase*/ true);
+
+
+                const blurListener = target.addEventListener('blur', ()=>{
+
+                    target.removeEventListener('keydown', keydownListener);
+                    target.removeEventListener('blur', blurListener);
+
+                    if(_onBlurListener){
+                        _onBlurListener();
+                    }
+
+                }, /*capturePhase*/ true);
+
+            });
 
         }, /*capturePhase*/ true);
-
     },
 
 
