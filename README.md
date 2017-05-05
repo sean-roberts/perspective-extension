@@ -13,9 +13,9 @@ When you enable the extension (chrome only atm), you will see the Perspective in
 ### Pipeline (not necessarily in order)
 
 - [x] Enable Perspective feedback on input fields.
+- [x] Toggle to enable/disable the extension on a site.
 - [ ] Show Perspective feedback text explanations.
 - [ ] Allow users the ability to give submit their own feedback for a given toxicity score.
-- [ ] Toggle to enable/disable the extension on a site.
 - [ ] Optimize positioning for popular sites (Facebook, Twitter, etc.)
 - [ ] Firefox add-on
 
