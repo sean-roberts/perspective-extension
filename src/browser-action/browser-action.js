@@ -22,21 +22,10 @@ const toggleBlacklistedDomain = (domain) => {
 };
 
 const getDomain = () => {
-    return new Promise((resolve, reject)=>{
-        chrome.tabs.query({active: true, currentWindow: true}, (arrayOfTabs) => {
-            const activeTab = arrayOfTabs[0];
-            if(activeTab){
-                const url = activeTab.url;
-                let domain;
-
-                if (url.indexOf('://') > -1) {
-                    return resolve(url.split('/')[2]);
-                }
-
-                return resolve(url.split('/')[0]);
-            }else {
-                reject('no_tab');
-            }
+    return new Promise((resolve) => {
+        // no reject path.. :/
+        chrome.runtime.getBackgroundPage((bg)=>{
+            resolve(bg.background.utils.getDomain());
         });
     });
 };
@@ -47,7 +36,6 @@ const initBrowserActionUI = () => {
     let currentDomain;
     const blacklistToggle = document.querySelector('.domain-blacklist-toggle');
     const updateToggleState = ( blacklisted ) => {
-        console.log(blacklisted);
         blacklistToggle.innerText = blacklisted ? "Yep!" : "Nope!";
     };
 
